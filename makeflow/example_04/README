@@ -1,0 +1,25 @@
+Run the workflow in work queue:
+
+$ makeflow -Twq -M ${USER}-my-makeflow example_04.mf
+
+We use -M to name the master, thus it can be any string you want. Here we
+${USER}-my-makeflow to ensure that all the participants in the tutorial choose
+a different name.
+
+In another terminal, check the status of your master with:
+
+$ work_queue_status
+
+(or work_queue_status | grep ${USER}-my-makeflow)
+
+Feed a worker to your master:
+
+$ work_queue_worker --single-shot -M ${USER}-my-makeflow
+
+Here we use --single-shot to quit after disconnecting from the master. (By
+default workers are long-lived and can work for many masters.)
+
+Alternatively, here we launch 5 workers using condor:
+
+$ condor_submit_worker --cores 4 --memory 2048 --disk 4096 -timeout 60 -M ${USER}-my-makeflow 5
+

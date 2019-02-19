@@ -1,0 +1,18 @@
+The only rule in the makeflow file is designed to failed. Here we retry each
+rule 2 times:
+
+$ makeflow -r 2 example_03.mf
+...
+2019/02/19 11:11:48.32 makeflow[20112] notice: job ./broken_sim.exe A B > log-of-A-to-B failed too many times.
+nothing left to do.
+
+The partial results of failed rules will be in directories makeflow.failed.N,
+where N is the number of the rule that failed (starting at 0):
+
+$ cat makeflow.failed.0/log-of-A-to-B 
+trying step 1 of ./broken_sim.exe A B
+trying step 2 of ./broken_sim.exe A B
+trying step 3 of ./broken_sim.exe A B
+an error! oh no!
+
+

@@ -1,0 +1,3 @@
+B  log-of-A-to-B:  A  broken_sim.exe
+    ./broken_sim.exe  A  B  >  log-of-A-to-B
+

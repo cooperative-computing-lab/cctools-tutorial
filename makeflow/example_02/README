@@ -1,0 +1,26 @@
+Run the workflow in condor:
+
+$ makeflow example_02.mf -Tcondor
+
+Confirm that the resources requested to condor correspond to the resources
+specified in the makeflow file:
+
+(Here we print one line before and two lines after the lines that contain Cpu)
+
+$ grep -B1 -A2 Cpus example_02.mf.condorlog
+
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 4         4
+	   Disk (KB)            :       20  1024000   1903350
+	   Memory (MB)          :        0     1024      1024
+--
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 4         4
+	   Disk (KB)            :       21  1024000  18717519
+	   Memory (MB)          :        0     1024      1024
+--
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 1         1
+	   Disk (KB)            :       21  2048000   3530078
+	   Memory (MB)          :        0      512       512
+

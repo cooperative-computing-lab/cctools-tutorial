@@ -1,0 +1,24 @@
+# group tasks by categories. 
+# memory and disk in MBs
+
+.MAKEFLOW CATEGORY my-simulations
+.MAKEFLOW CORES 4
+.MAKEFLOW MEMORY 1024
+.MAKEFLOW DISK 1000
+
+.MAKEFLOW CATEGORY my-postprocess
+.MAKEFLOW CORES 1
+.MAKEFLOW MEMORY 512
+.MAKEFLOW DISK 2000
+
+.MAKEFLOW CATEGORY my-simulations
+Y: X sim.exe
+    ./sim.exe X Y
+
+B: A sim.exe
+    ./sim.exe A B
+
+.MAKEFLOW CATEGORY my-postprocess
+results: B Y postprocess
+    ./postprocess B Y > results
+

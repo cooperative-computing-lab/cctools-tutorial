@@ -1,0 +1,8 @@
+# Rule to produce C from B
+C: B  sim.exe
+    ./sim.exe B C
+
+# Rule to produce B from A
+B: A sim.exe
+    ./sim.exe A B
+

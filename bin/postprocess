@@ -1,7 +1,11 @@
 #! /bin/sh
 set -e
 
-/bin/date   > $2
-/bin/echo 'postprocessed output' >> $2
-/bin/cat $1 >> $2
+for file in "$@"
+do
+    echo "--- $file ---"
+    cat $file
+done
+
+echo "------"
 

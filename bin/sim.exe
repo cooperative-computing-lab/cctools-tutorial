@@ -1,0 +1,37 @@
+#! /bin/sh
+
+exec=$(/bin/basename $0)
+input=$1
+output=$2
+
+if [ -z "${input}" ]
+then
+	/bin/echo 'missing input file'
+	exit 1
+fi
+
+if [ -z "${output}" ]
+then
+	/bin/echo 'missing output file'
+	exit 1
+fi
+
+cmd_line="./$exec $input $output"
+
+
+/bin/echo "step 1 of $cmd_line"
+sleep 1
+/bin/uname -a   > $output
+
+/bin/echo "step 2 of $cmd_line"
+sleep 1
+/bin/cat $input >> $output
+
+/bin/echo "step 3 of $cmd_line"
+sleep 1
+/bin/date       >> $output
+
+/bin/echo "end of $cmd_line"
+
+
+

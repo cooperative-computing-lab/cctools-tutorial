@@ -1,0 +1,3 @@
+CCTOOLS_TARBALL=cctools-7.0.9-x86_64-redhat7.tar.gz
+TUTORIAL_HOME=${HOME}/cctools-tutorial
+

@@ -1,0 +1,23 @@
+#! /bin/sh
+
+bindir=$(dirname $(realpath -e $0))
+conf=${bindir}/../etc/configuration
+
+if [ ! -f ${conf} ]
+then
+	echo 'Could not find configuration file' >&2
+	exit 1
+fi
+
+source ${conf}
+
+if [ -f ${TUTORIAL_HOME}/${CCTOOLS_TARBALL} ]
+then
+	echo "${CCTOOLS_TARBALL} already downloaded."
+	exit 0
+fi
+
+set -ex
+
+curl http://ccl.cse.nd.edu/software/files/${CCTOOLS_TARBALL} -o ${TUTORIAL_HOME}/${CCTOOLS_TARBALL}
+

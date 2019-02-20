@@ -43,5 +43,5 @@ while not q.empty():
                                                                          t.resources_measured.memory,
                                                                           t.resources_measured.disk)
         else:
-            print 'failed with code {}'.format(t.result_status)
+            print 'failed with code {}'.format(t.return_status)
 

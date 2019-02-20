@@ -1,7 +1,8 @@
 #! /bin/sh
 
 bindir=$(dirname $(realpath -e $0))
-conf=${bindir}/../etc/configuration
+tutorial_home=${bindir}/..
+conf=${tutorial_home}/etc/configuration
 
 if [ ! -f ${conf} ]
 then
@@ -11,7 +12,7 @@ fi
 
 source ${conf}
 
-if [ -f ${TUTORIAL_HOME}/${CCTOOLS_TARBALL} ]
+if [ -f ${tutorial_home}/${CCTOOLS_TARBALL} ]
 then
 	echo "${CCTOOLS_TARBALL} already downloaded."
 	exit 0
@@ -19,5 +20,5 @@ fi
 
 set -ex
 
-curl http://ccl.cse.nd.edu/software/files/${CCTOOLS_TARBALL} -o ${TUTORIAL_HOME}/${CCTOOLS_TARBALL}
+curl http://ccl.cse.nd.edu/software/files/${CCTOOLS_TARBALL} -o ${tutorial_home}/${CCTOOLS_TARBALL}
 

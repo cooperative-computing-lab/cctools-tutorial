@@ -6,8 +6,7 @@ from os import environ
 #### SET MASTER NAME HERE
 #### for example: master_name = environ['USER'] + '-my-first-master'
 
-#master_name = NOT_SET
-master_name = environ['USER'] + '-resource-practice'
+master_name = NOT_SET
 
 # run at some port at random
 q = WQ.WorkQueue(name=master_name, port=0)
@@ -37,9 +36,12 @@ for i in range(0,30):
 while not q.empty():
     t = q.wait(60)
     if t:
-        print 'task {} finished. allocated mem {} disk {}, used mem {} disk {}'.format(t.id,
-                                                                          t.resources_allocated.memory,
-                                                                          t.resources_allocated.disk,
-                                                                          t.resources_measured.memory,
+        print 'task {} finished:'.format(t.id)
+        if t.result == WQ.WORK_QUEUE_RESULT_SUCCESS:
+            print 'allocated mem {} disk {}, used mem {} disk {}'.format(t.resources_allocated.memory,
+                                                                         t.resources_allocated.disk,
+                                                                         t.resources_measured.memory,
                                                                           t.resources_measured.disk)
+        else:
+            print 'failed with code {}'.format(t.result_status)
 

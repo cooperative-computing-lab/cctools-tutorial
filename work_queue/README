@@ -1,0 +1,7 @@
+Before running any examples you need to set your PATH to include cctools/bin,
+and PYTHONPATH to include cctools/lib/python2.7/site_packages.
+
+For this tutorial you can use:
+
+source ../etc/cctools-env
+

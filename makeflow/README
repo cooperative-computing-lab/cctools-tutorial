@@ -1,0 +1,6 @@
+Before running any examples you need to set your PATH to include cctools/bin.
+
+For this tutorial you can use:
+
+source ../etc/cctools-env
+

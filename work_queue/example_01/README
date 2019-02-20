@@ -1,0 +1,18 @@
+# Tell python where to find work queue
+
+$ PYTHONPATH=${HOME}/cctools-tutorial/cctools/lib/python2.7/site-packages:${PYTHONPATH}
+$ export PYTHONPATH
+
+$ cd ~/cctools-tutorial/work_queue/example_01
+
+# modify wq_mini.py with a unique master name:
+# e.g., ${USER}-my-first-master, then 
+
+$ python example_01.py
+
+# in some other terminal, launch a worker for that master
+# workers don't need PYTHONPATH set.
+
+$ work_queue_worker -M your-master-name --single-shot
+
+

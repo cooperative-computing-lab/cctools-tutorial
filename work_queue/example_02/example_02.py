@@ -2,6 +2,7 @@ import work_queue as WQ
 
 # in case we want ${USER} for master name
 from os import environ
+import time
 
 #### Customize your master name
 master_name = environ['USER'] + '-master'
@@ -47,4 +48,11 @@ while not q.empty():
                                                                      t.resources_allocated.disk,
                                                                      t.resources_measured.memory,
                                                                      t.resources_measured.disk)
+print 'Now in a terminal, type:'
+print 'work_queue_status -A localhost {}'.format(q.port)
+
+raw_input('\n\nPress enter to exit master')
+
+
+
 

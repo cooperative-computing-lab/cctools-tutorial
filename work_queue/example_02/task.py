@@ -15,7 +15,7 @@ accum = 0
 # create a 200MB file
 with open('output', 'wb') as f:
     while accum < size:
-        line = 'a' * 1024 * 1024 * 10
+	line = 'a' * 1024 * 1024 * 10
         accum += len(line)
         f.write(line)
 

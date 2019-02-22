@@ -1,0 +1,12 @@
+etcdir=$(dirname $(realpath -e $0))
+tutorial_home=${etcdir}/..
+
+echo $tutorial_home
+
+
+echo 'Updating PATH'
+export PATH=${tutorial_home}/cctools/bin:${PATH}
+
+echo 'Updating PYTHONPATH'
+export PYTHONPATH=${tutorial_home}/cctools/lib/python2.7/site-packages
+

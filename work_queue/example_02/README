@@ -19,6 +19,6 @@ $ work_queue_worker --disk 20000 -dall  -o:stdout | grep 'Limit'
 # check resources statistics
 $ work_queue_status -A localhost 9000
 CATEGORY RUNNING WAITING FIT-WORKERS MAX-CORES MAX-MEMORY MAX-DISK
-my-tasks       0      50           0         1         ~1    >200
+my-tasks       0      50           0         1        ~10    >500
 
 

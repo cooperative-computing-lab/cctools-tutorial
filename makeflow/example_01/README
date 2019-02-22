@@ -3,6 +3,8 @@ Observe that only the input files are present:
 $ ls
 A  example_01.mf  README  sim.exe
 
+If you have not done so, set the cctools environment:
+$ source ../../etc/uofwm-env
 
 Run as...
 $ makeflow example_01.mf

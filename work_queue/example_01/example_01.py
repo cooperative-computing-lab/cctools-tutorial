@@ -6,7 +6,8 @@ from os import environ
 #### SET MASTER NAME HERE
 #### for example: master_name = environ['USER'] + '-my-first-master'
 
-master_name = NOT_SET
+#master_name = NOT_SET
+master_name = environ['USER'] + '-my-first-master'
 
 # 1. run at some port at random
 q = WQ.WorkQueue(name=master_name, port=0)

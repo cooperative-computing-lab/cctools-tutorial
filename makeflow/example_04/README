@@ -19,7 +19,8 @@ $ work_queue_worker --single-shot -M ${USER}-my-makeflow
 Here we use --single-shot to quit after disconnecting from the master. (By
 default workers are long-lived and can work for many masters.)
 
-Alternatively, here we launch 5 workers using condor:
+Alternatively, here we launch 1 worker using condor (that last 1 is the number
+of workers requested):
 
-$ condor_submit_worker --cores 4 --memory 2048 --disk 4096 -timeout 60 -M ${USER}-my-makeflow 5
+$ condor_submit_workers --cores 1 --memory 2048 --disk 4096 -timeout 60 -M ${USER}-my-makeflow 1
 

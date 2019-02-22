@@ -4,7 +4,7 @@ set -e
 for file in "$@"
 do
     echo "--- $file ---"
-    cat $file
+    /bin/cat $file
 done
 
 echo "------"

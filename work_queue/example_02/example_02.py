@@ -3,13 +3,14 @@ import work_queue as WQ
 # in case we want ${USER} for master name
 from os import environ
 
-#### SET MASTER NAME HERE
-#### for example: master_name = environ['USER'] + '-my-first-master'
-
-master_name = NOT_SET
+#### Customize your master name
+master_name = environ['USER'] + '-master'
 
 # run at some port at random
 q = WQ.WorkQueue(name=master_name, port=0)
+
+# enable the transactions log
+q.specify_transactions_log('my_transactions.log')
 
 print 'WorkQueue on port: {}'.format(q.port)
 

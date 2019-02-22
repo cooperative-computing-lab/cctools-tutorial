@@ -1,10 +1,6 @@
 # Tell python where to find work queue and the workers
 
-$ PATH=${HOME}/cctools-tutorial/cctools/bin:${PATH}
-$ export PATH
-
-$ PYTHONPATH=${HOME}/cctools-tutorial/cctools/lib/python2.7/site-packages:${PYTHONPATH}
-$ export PYTHONPATH
+$ source ~/cctools-tutorial/etc/uofwm-env
 
 $ python example_02.py
 …
@@ -12,10 +8,11 @@ WorkQueue on port: NNNN
 
 # in another terminal, create a worker:
 # (-dall is with debug output)
-$ work_queue_worker --disk 20000 -dall  -o:stdout | grep 'Limit'
+$ work_queue_worker --disk 20000 -dall  -o:stdout -M ${USER}-master | grep 'Limit'
 
 
 # ^C to kill the worker
+# 	
 # check resources statistics
 $ work_queue_status -A localhost 9000
 CATEGORY RUNNING WAITING FIT-WORKERS MAX-CORES MAX-MEMORY MAX-DISK

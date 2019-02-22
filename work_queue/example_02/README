@@ -10,9 +10,9 @@ $ python example_02.py
 …
 WorkQueue on port: NNNN
 
-# in another terminal, create a worker to small for the tasks:
+# in another terminal, create a worker:
 # (-dall is with debug output)
-$ work_queue_worker --disk 150 -dall  -o:stdout | grep 'Limit'
+$ work_queue_worker --disk 20000 -dall  -o:stdout | grep 'Limit'
 
 
 # ^C to kill the worker
@@ -20,8 +20,5 @@ $ work_queue_worker --disk 150 -dall  -o:stdout | grep 'Limit'
 $ work_queue_status -A localhost 9000
 CATEGORY RUNNING WAITING FIT-WORKERS MAX-CORES MAX-MEMORY MAX-DISK
 my-tasks       0      50           0         1         ~1    >200
-
-# feed a larger worker
-$ work_queue_worker --disk 5000 -dall -o:stdout --single-shot
 
 

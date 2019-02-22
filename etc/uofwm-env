@@ -4,5 +4,5 @@ echo Adding $cctools_home/bin to PATH
 export PATH=${cctools_home}/bin:${PATH}
 
 echo Adding $cctools_home/lib/python2.7/site-packated to PYTHONPATH
-export PYTHONPATH=${cctools_home}/cctools/lib/python2.7/site-packages
+export PYTHONPATH=${cctools_home}/lib/python2.7/site-packages
 

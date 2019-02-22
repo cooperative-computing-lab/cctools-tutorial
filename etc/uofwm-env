@@ -3,7 +3,7 @@ cctools_home=/usr/local/cctools
 echo Adding $cctools_home/bin to PATH
 export PATH=${cctools_home}/bin:${PATH}
 
-echo Adding $cctools_home/lib/python2.7/site-packated to PYTHONPATH
+echo Adding $cctools_home/lib/python2.7/site-packages to PYTHONPATH
 export PYTHONPATH=${cctools_home}/lib/python2.7/site-packages
 
 echo Setting work queue port range to 10000-10999

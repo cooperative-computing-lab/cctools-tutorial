@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/python
 import sys
 
 # by default 200 MB
